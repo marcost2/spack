@@ -138,6 +138,10 @@ class Amber(Package, CudaPackage):
     depends_on('cuda@:10.2.89', when='@18:+cuda')
     depends_on('cuda@7.5.18', when='@:16+cuda')
 
+    #Amber20 dependencies
+    depends_on('tcsh', type=('build'), when='@20')
+    depends_on('parallel-netcdf', when='@20')
+
     # conflicts
     conflicts('+x11', when='platform=cray',
               msg='x11 amber applications not available for cray')
@@ -186,6 +190,8 @@ class Amber(Package, CudaPackage):
             raise InstallError('Unknown compiler, exiting!!!')
 
         # Base configuration
+        # Alternative way to make csh/tcsh detection work with modules
+        filter_file(r'-x /bin/csh', 'command -v csh &> /dev/null/', 'AmberTools/src/configure2', string=True)
         conf = Executable('./configure')
         base_args = ['--skip-python',
                      '--with-netcdf', self.spec['netcdf-fortran'].prefix,
