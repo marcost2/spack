@@ -13,7 +13,7 @@ class Amber(Package, CudaPackage):
     """Amber is a suite of biomolecular simulation programs together
        with Amber tools.
 
-       A manual download is required for Ambers. Spack will search your current
+       A manual download is required for Ambers and Ambertools. Spack will search your current
        directory for the download files. Alternatively, add the files to a mirror
        so that Spack can find them. For instructions on how to set up a mirror, see
        https://spack.readthedocs.io/en/latest/mirrors.html
@@ -23,7 +23,7 @@ class Amber(Package, CudaPackage):
        """
 
     homepage = "https://ambermd.org/"
-    url = "file://{0}/Amber18.tar.bz2".format(os.getcwd())
+    url = "file://{0}/Amber20.tar.bz2".format(os.getcwd())
     manual_download = True
 
     maintainers = ['hseara']
@@ -38,7 +38,7 @@ class Amber(Package, CudaPackage):
 
     resources = {
         # [version amber, version ambertools , sha256sum]
-        '20': ('20', 'b1e1f8f277c54e88abc9f590e788bbb2f7a49bcff5e8d8a6eacfaf332a4890f9'),
+        '20': ('21', 'f55fa930598d5a8e9749e8a22d1f25cab7fcf911d98570e35365dd7f262aaafd'),
         '18': ('19', '0c86937904854b64e4831e047851f504ec45b42e593db4ded92c1bee5973e699'),
         '16': ('16', '7b876afe566e9dd7eb6a5aa952a955649044360f15c1f5d4d91ba7f41f3105fa'),
     }
@@ -62,6 +62,9 @@ class Amber(Package, CudaPackage):
         ('20', '7', '143b6a09f774aeae8b002afffb00839212020139a11873a3a1a34d4a63fa995d'),
         ('20', '8', 'a6fc6d5c8ba0aad3a8afe44d1539cc299ef78ab53721e28244198fd5425d14ad'),
         ('20', '9', '5ce6b534bab869b1e9bfefa353d7f578750e54fa72c8c9d74ddf129d993e78cf'),
+        ('20', '10', '76a683435be7cbb860f5bd26f09a0548c2e77c5a481fc6d64b55a3a443ce481d'),
+        ('20', '11', 'f40b3612bd3e59efa2fa1ec06ed6fd92446ee0f1d5d99d0f7796f66b18e64060'),
+        ('20', '12', '194119aed03f80677c4bab78a20fc09b0b3dc17c41a57c5eb3c912b2d73b18ab'),
         ('18', '1', '3cefac9a24ece99176d5d2d58fea2722de3e235be5138a128428b9260fe922ad'),
         ('18', '2', '3a0707a9a59dcbffa765dcf87b68001450095c51b96ec39d21260ba548a2f66a'),
         ('18', '3', '24c2e06f71ae553a408caa3f722254db2cbf1ca4db274542302184e3d6ca7015'),
